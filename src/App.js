@@ -4,13 +4,16 @@ import Login from'./Components/Login/Login';
 import Register from './Components/Register/Register';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useState } from 'react';
+import Navbar from './Components/Navbar/Navbar';
 
 
 function App() {
   const [ user,setLoginUser] = useState({})
   return (
+    <>
+    <Navbar />
     <div className='App'>
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path='/' element=
           {
@@ -21,8 +24,10 @@ function App() {
           <Route path='/register' 
           element={<Register />} />
         </Routes>
-      </Router>
+      </Router> */}
     </div>
+    
+    </>
   );
 }
 
