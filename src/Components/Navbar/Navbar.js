@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaFacebookSquare,FaInstagramSquare,FaYoutubeSquare } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 import './Navbar.css'
 
 const Navbar = () => {
@@ -20,13 +21,13 @@ const Navbar = () => {
             <a href="#">Home</a>
         </li>
         <li>
-            <a href="#">Home</a>
+            <a href="#">About</a>
         </li>
         <li>
-            <a href="#">Home</a>
+            <a href="#">Register</a>
         </li>
         <li>
-            <a href="#">Home</a>
+            <a href="#">Login</a>
         </li>
     </ul>
 </div>
@@ -43,6 +44,11 @@ const Navbar = () => {
     <a href="#"><FaYoutubeSquare /></a>
 </li>
 </ul>
+<div className='hamburget-menu'>
+<a href="">
+    <GiHamburgerMenu />
+</a>
+</div>
 </div>
 </nav>
 </>
