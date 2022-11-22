@@ -27,13 +27,25 @@ function Login({ setLoginUser }) {
     })
   }
   const login = () =>{
-    axios.post("http://localhost:9200/login",user)
+    axios.post("http://localhost:9200/login", user)
     .then(res =>{
      alert(res.data.message)
      setLoginUser(res.data.user)
      history('/')
     })
   }
+
+  const config = {
+    headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pbGxpbyIsInBhc3N3b3JkIjoibWlsbGlvQDEyMyIsImlhdCI6MTY2OTEzOTE1MCwiZXhwIjoxNjY5MTQyNzUwfQ.nWPbaoh9eZW2MT1SzNvw4ntKs4XBKnF7uphpbQcd-LI` }
+  };
+  const getAllItems = () =>{
+    axios.get("http://localhost:9400/gtalitms", config)
+    .then(res =>{
+      console.log(res.data);
+    })
+  }
+  
+
   return (
     
     <div className='login'>
@@ -43,6 +55,7 @@ function Login({ setLoginUser }) {
     <div className="button"onClick={() => {login();diffToast();}}>Login</div>
     <div>or</div>
     <div className="button" onClick={() => history('/register')}>Register</div>
+    <div className="button"onClick={() => {getAllItems();}}>GetAllItems</div>
     <ToastContainer />
     </div>
   )
